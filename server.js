@@ -2,7 +2,7 @@ const express = require('express');
 const Routes = require('./src/pinjam/routes');
 
 const app = express();
-const port = 3300;
+const port = process.env.port || 5000;
 
 app.use(express.json());
 app.get('/', (req, res) => {
