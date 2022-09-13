@@ -1,6 +1,7 @@
 const getJadwal =
 	'SELECT pinjam.id, nama_ruang, nama_peminjam, tanggal_pinjam, waktu_pinjam, durasi_pinjam, ket_peminjaman  FROM pinjam LEFT JOIN ruangan ON ruangan.id = pinjam.id_ruang';
 const getRuangan = 'SELECT * FROM ruangan';
+const getRuanganID = 'SELECT * FROM ruangan WHERE id = $1';
 const getJadwalID =
 	'SELECT pinjam.id, nama_ruang, nama_peminjam, tanggal_pinjam, waktu_pinjam, durasi_pinjam, ket_peminjaman  FROM pinjam JOIN ruangan ON pinjam.id_ruang = ruangan.id WHERE pinjam.id = $1';
 const checkAvailability =
@@ -14,6 +15,7 @@ const updateJadwal =
 module.exports = {
 	getJadwal,
 	getRuangan,
+	getRuanganID,
 	getJadwalID,
 	checkAvailability,
 	addJadwal,

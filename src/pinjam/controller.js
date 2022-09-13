@@ -8,6 +8,14 @@ const getRuangan = (req, res) => {
 	});
 };
 
+const getRuanganID = (req, res) => {
+	const id = parseInt(req.params.id);
+	pool.query(queries.getRuanganID, [id], (error, results) => {
+		if (error) throw error;
+		res.status(200).json(results.rows);
+	});
+};
+
 const getJadwal = (req, res) => {
 	pool.query(queries.getJadwal, (error, results) => {
 		if (error) throw error;
@@ -116,6 +124,7 @@ const updateJadwal = (req, res) => {
 
 module.exports = {
 	getRuangan,
+	getRuanganID,
 	getJadwal,
 	getJadwalID,
 	addJadwal,

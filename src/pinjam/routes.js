@@ -4,6 +4,7 @@ const controller = require('./controller');
 const router = Router();
 
 router.get('/ruangan', controller.getRuangan);
+router.get('/ruangan/:id', controller.getRuanganID);
 router.get('/', controller.getJadwal);
 router.get('/:id', controller.getJadwalID);
 router.post('/', controller.addJadwal);
