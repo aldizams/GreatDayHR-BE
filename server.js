@@ -21,6 +21,6 @@ app.get('/', (req, res) => {
 	res.send('Hello World');
 });
 
-app.use('/api/pinjam', Routes);
+app.use('/', Routes);
 
 app.listen(port, () => console.log(`app listen on port ${port}`));
